@@ -1,0 +1,13 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Agent install targets (skills live in skills/, not here)
+.codex/skills/
+
+# Packaged artifacts
+dist/
+*.skill

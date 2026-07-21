@@ -1,0 +1,10 @@
+{
+  "name": "la-skills",
+  "description": "Rust browser automation with chaser-oxide, and git commit messages.",
+  "version": "1.0.0",
+  "author": {
+    "name": "A. O. Larin",
+    "email": "ekzebox@gmail.com"
+  },
+  "license": "MIT"
+}

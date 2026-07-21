@@ -1,0 +1,20 @@
+{
+  "name": "la-skills",
+  "owner": {
+    "name": "A. O. Larin",
+    "email": "ekzebox@gmail.com"
+  },
+  "description": "Personal collection of Claude Code / Codex agent skills by A. O. Larin.",
+  "plugins": [
+    {
+      "name": "la-skills",
+      "source": "./",
+      "description": "Rust browser automation with chaser-oxide, and git commit messages.",
+      "version": "1.0.0",
+      "author": {
+        "name": "A. O. Larin"
+      },
+      "keywords": ["rust", "browser-automation", "git", "commits", "workflow"]
+    }
+  ]
+}
