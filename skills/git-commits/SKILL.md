@@ -1,6 +1,6 @@
 ---
 name: git-commits
-description: Write great git commit messages following Chris Beams' 7 rules — imperative subject under 50 chars, body that narrates why, theme-sized commit scope. Use before writing any commit message. Asks once per repo whether commits should carry a Co-Authored-By trailer and remembers the answer; accepts an optional `coauthor` or `no-coauthor` argument to set it directly.
+description: Write great git commit messages following Chris Beams' 7 rules — language-appropriate subject under 50 chars, body that narrates why, theme-sized commit scope. Use before writing any commit message. Asks once per repo whether commits should carry a Co-Authored-By trailer and remembers the answer; accepts an optional `coauthor` or `no-coauthor` argument to set it directly.
 ---
 
 # Git Commit Message Skill
@@ -13,15 +13,15 @@ Source: https://chris.beams.io/git-commit
 2. **Limit the subject line to 50 characters** (72 is the hard cap; GitHub truncates at 72)
 3. **Capitalize the subject line**
 4. **Do not end the subject line with a period**
-5. **Use the imperative mood in the subject line**
+5. **Use the language's commit convention** (English imperative; see localized forms below)
 6. **Wrap the body at 72 characters**
 7. **Use the body to explain what and why, not how**
 
 ---
 
-## Rule 5 — Imperative mood
+## Rule 5 — Match the message language
 
-The subject must complete this sentence: _"If applied, this commit will **[subject]**"_
+For English messages, the subject must complete this sentence: _"If applied, this commit will **[subject]**"_
 
 | Good | Bad |
 |------|-----|
@@ -29,7 +29,14 @@ The subject must complete this sentence: _"If applied, this commit will **[subje
 | Add price history timestamps | Adding price history timestamps |
 | Remove deprecated auth flow | Removed deprecated auth flow |
 
-Git itself uses imperative: "Merge branch", "Revert commit", "Initial commit".
+Git itself uses English imperative: "Merge branch", "Revert commit", "Initial commit".
+
+For other languages, use their own commit convention rather than translating the
+English verb form literally. In Russian subjects and body bullets, prefer the
+result form: `Добавлено`, `Исправлено`, `Удалено`, `Сделано`; not first-person
+`Добавил`/`Сделал` or a mechanically translated imperative. For example:
+`Исправлена потеря контекста после сжатия`. This does not choose the message
+language: follow the owner's request or the repository convention.
 
 ---
 
@@ -95,7 +102,7 @@ These override or extend the canonical rules for this project:
 - **No trailers by default** — no `Co-Authored-By`, no generator footer (see "Attribution presets" for how to switch this per repo or per call)
 - **Narrate the why by default** — the body is a flat `-` list explaining the shared reason behind the change, *not* a per-file changelog. Name a file only when it actually helps a reader understand the *why*. (See "Body shape" below for the one exception.)
 - **Capitalize every bullet** — each `-` item starts with a capital letter, same as the subject
-- **Imperative in bullets too** — body bullet points start with a verb in imperative mood, same rule as the subject line
+- **Match the language in bullets too** — use the same language convention as the subject: English imperative or the localized form in Rule 5
 
 ---
 
@@ -202,7 +209,7 @@ the default layout for any commit that happens to touch more than one file.
 Use this for almost every commit, single- or multi-file. No file headers.
 
 ```
-Imperative subject under 50 chars
+Language-appropriate subject under 50 chars
 
 - why this change exists / what problem it solves
 - another facet of the same reason if needed
@@ -214,7 +221,7 @@ Reach for this only when a file's change is significant enough to isolate, or is
 tangential ride-along you want to flag (see "Body shape"). Keep the rest as narrative.
 
 ```
-Imperative subject under 50 chars (main theme only)
+Language-appropriate subject under 50 chars (main theme only)
 
 - the main why, narrated as usual
 
@@ -286,7 +293,7 @@ If the diff spans several themes, first split it per "Commit scope" above — st
 - [ ] Commit is one coherent theme — related changes grouped, not split to the smallest diff
 - [ ] Subject is ≤ 50 characters
 - [ ] Subject starts with a capital letter
-- [ ] Subject uses imperative ("Fix", not "Fixed" or "Fixes")
+- [ ] Subject follows its language convention (English `Fix`; Russian `Исправлено`)
 - [ ] Subject has no trailing period or type prefix
 - [ ] Blank line between subject and body
 - [ ] Body lines wrapped at 72 characters
@@ -295,5 +302,5 @@ If the diff spans several themes, first split it per "Commit scope" above — st
 - [ ] Subject describes the main theme only — no tangential change tacked on with `and`
 - [ ] All list items use `-`
 - [ ] Every bullet starts with a capital letter
-- [ ] Every bullet starts with an imperative verb
+- [ ] Body bullets follow the subject's language convention
 - [ ] Attribution preset resolved — a trailer is present or absent on purpose, not by accident
