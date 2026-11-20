@@ -103,6 +103,9 @@ These override or extend the canonical rules for this project:
 - **Narrate the why by default** — the body is a flat `-` list explaining the shared reason behind the change, *not* a per-file changelog. Name a file only when it actually helps a reader understand the *why*. (See "Body shape" below for the one exception.)
 - **Capitalize every bullet** — each `-` item starts with a capital letter, same as the subject
 - **Match the language in bullets too** — use the same language convention as the subject: English imperative or the localized form in Rule 5
+- **Lead every bullet with a verb in the subject's convention** — English imperative (`Wrap`, `Replace`, `Thread`) or the localized result form (`Добавлено`, `Исправлено`). A declarative context sentence is never a bullet on its own: weave the reason into the imperative bullet after a colon.
+  Bad: `- Debian 13 ships python3-libgpiod 2.x where the v1 API is gone` →
+  Good: `- Wrap all gpiod access in the v1 compatibility layer: Debian 13 ships python3-libgpiod 2.x where the v1 API is gone, so the service crashed`
 
 ---
 
@@ -302,5 +305,5 @@ If the diff spans several themes, first split it per "Commit scope" above — st
 - [ ] Subject describes the main theme only — no tangential change tacked on with `and`
 - [ ] All list items use `-`
 - [ ] Every bullet starts with a capital letter
-- [ ] Body bullets follow the subject's language convention
+- [ ] Each bullet starts with a verb in the subject's convention — declarative context sentences are a violation, not a style choice
 - [ ] Attribution preset resolved — a trailer is present or absent on purpose, not by accident
